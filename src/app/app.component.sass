@@ -1,0 +1,71 @@
+@import '../assets/stylesheets/variables'
+
+header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-weight: 300
+  font-size: 15px
+  text-align: left
+
+  nav
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+  a, a:focus, a:active
+    color: $kendo-black
+    text-decoration: none
+    margin: 14px
+    &:first-child
+      margin-left: 0
+
+  a:hover
+    color: $kendo-orange
+    transition: all .2s ease
+
+  a.active
+    font-weight: bold
+    cursor: default
+    color: $kendo-orange
+
+a.escape-hatch
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  transform: translateZ(0)
+  -moz-osx-font-smoothing: grayscale
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out
+  &:hover
+    transform: scale(1.05)
+  &:active
+    transform: scale(.90)
+
+
+.checkout
+  position: relative
+
+.checkout > *
+  transition: fill .3s, background-color .2s
+
+.checkout:hover svg
+  fill: lighten(black, 35%)
+
+.checkout:hover .indicator
+  background-color: lighten(black, 35%)
+
+.indicator
+  top: -8px
+  right: -8px
+  z-index: 3
+  position: absolute
+  padding: 0 5px
+  min-width: 20px
+  height: 20px
+  background: black
+  border-radius: 10px
+  box-sizing: border-box
+  color: white
+  font-family: sans-serif
+  font-size: 12px
+  line-height: 20px
+  text-align: center
