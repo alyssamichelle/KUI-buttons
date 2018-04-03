@@ -83,14 +83,14 @@ Now before we start using some Kendo components, let's go ahead and get our navi
 
 `import { RouterModule, Routes } from '@angular/router';`
 
-[http://cl.nicoll.co/qYSK](http://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
+![http://cl.nicoll.co/qYSK](http://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
 
 
 ## Create appRoutes const
 
 `const appRoutes: Routes = [];`
 
-[http://cl.nicoll.co/qY1q](http://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
+![http://cl.nicoll.co/qY1q](http://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
 
 ## Configure our routes (with routerModule.forRoot) and add to app's import array
 
@@ -100,7 +100,7 @@ Now before we start using some Kendo components, let's go ahead and get our navi
   )
 ```
 
-[http://cl.nicoll.co/qZEd](http://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
+![http://cl.nicoll.co/qZEd](http://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
 
 
 
@@ -116,10 +116,10 @@ const appRoutes: Routes = [
 
 The empty path in the second route represents the default path for the application, the place to go when the path in the URL is empty, as it typically is at the start.
 
-[http://cl.nicoll.co/qYAg](http://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
+![http://cl.nicoll.co/qYAg](http://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
 
 ## Creating the other route for our t-shirts component
-[http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
+![http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
 
 Remember to leave the most generic routes, last. Order does matter! So in this case, we are leaving the empty route until the very end, for our "catch all" route.
 
@@ -133,7 +133,7 @@ Remember to leave the most generic routes, last. Order does matter! So in this c
 # Installing KUI Buttons
 `npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n`
 
-[http://cl.nicoll.co/qdiu](http://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
+![http://cl.nicoll.co/qdiu](http://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
 
 # Import Button & Animation Component into `app.module.ts`
 
@@ -145,7 +145,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 ```
 
-[http://cl.nicoll.co/qdHi](http://cl.nicoll.co/qdHi/Screen%20Recording%202018-04-03%20at%2002.59%20PM.gif)
+![http://cl.nicoll.co/qdHi](http://cl.nicoll.co/qdHi/Screen%20Recording%202018-04-03%20at%2002.59%20PM.gif)
 
 Be sure to add them to the imports array as well:
 
@@ -164,7 +164,7 @@ Be sure to add them to the imports array as well:
   ],
 ```
 
-[http://cl.nicoll.co/qe6n](http://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
+![http://cl.nicoll.co/qe6n](http://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
 
 # Including the KUI Buttons in our stickers component
 
