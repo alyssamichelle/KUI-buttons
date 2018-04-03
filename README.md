@@ -4,7 +4,7 @@ We are starting this gif guide out with an already begun app. If you need a bit 
 
 ￼![http://cl.nicoll.co/qYu9](https://d3vv6lp55qjaqc.cloudfront.net/items/3h472g2j083U2d2F2a3B/Image%202018-03-30%20at%2012.22.37%20PM.png?X-CloudApp-Visitor-Id=23627&v=4f186801)
 
-I went ahead and did some styling and created a header, so to follow along, you should clone down the beginning seed of the project here:
+I went ahead and did some styling and created a header, so to follow along, you should clone down the beginning seed of the project [here](https://github.com/alyssamichelle/KUI-buttons/tree/starter-seed).
 
 ### Side Note on Service Workers
 
