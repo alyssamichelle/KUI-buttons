@@ -139,7 +139,7 @@ Include the router-outlet at the bottom of our `app.component.html`:
 
 Our routes are working now!!
 
-![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qdA2/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
+![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qe4i/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
 However, we don't have active styles applying to the links when each route in turn is selected. I've already added `.active` styles to the `app.component.sass` file. We just need to set a `routerLinkActive` attribute to active. This is going to add a class of `.active` to each anchor when the `routerLink` route is selected.
 
