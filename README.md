@@ -189,6 +189,10 @@ Be sure to add them to the imports array as well:
 
 ![http://cl.nicoll.co/qe6n](http://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
 
+Now I went ahead and populated the stickers template:
+![http://cl.nicoll.co/qdsG](http://cl.nicoll.co/qdsG/Image%202018-04-03%20at%204.43.52%20PM.png)
+
+
 # Including the KUI Buttons in our stickers component
 
 # Adding the buttons functionality
