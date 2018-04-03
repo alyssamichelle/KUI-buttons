@@ -123,12 +123,35 @@ The empty path in the second route represents the default path for the applicati
 
 Remember to leave the most generic routes, last. Order does matter! So in this case, we are leaving the empty route until the very end, for our "catch all" route.
 
-# Hooking up our navigation
+# Hooking up our navigation in `app.component.html`
+
+At the top, we'll add a `routerLink` with the route for each of the anchors:
+
+```html
+
+  <nav>
+    <a routerLink="/t-shirts">T-Shirts</a>
+    <a routerLink="/stickers">Stickers</a>
+  </nav>
+```
+Include the router-outlet at the bottom of our `app.component.html`:
+`<router-outlet></router-outlet>`
+
+Our routes are working now!!
+
+![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qdA2/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
+
+However, we don't have active styles applying to the links when each route in turn is selected. I've already added `.active` styles to the `app.component.sass` file. We just need to set a `routerLinkActive` attribute to active. This is going to add a class of `.active` to each anchor when the `routerLink` route is selected.
 
 ```html
 <a routerLink="/t-shirts" routerLinkActive="active">T-Shirts</a>
 <a routerLink="/stickers" routerLinkActive="active">Stickers</a>
 ```
+
+
+Now look at the magic happen!
+
+![http://cl.nicoll.co/qdA2](http://cl.nicoll.co/qdA2/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
 # Installing KUI Buttons
 `npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n`
