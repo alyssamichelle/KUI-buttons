@@ -1,6 +1,8 @@
-# Getting Started: Setup
+This GIF guide demonstrates the steps necessary to integrate [Kendo UI for Angular](https://www.telerik.com/kendo-angular-ui/) into a web app. It then walks you through the process of using the [Button](https://www.telerik.com/kendo-angular-ui/components/buttons/button/) component.
 
-We are starting this gif guide out with an already begun app. If you need a bit of help in creating your first app, we have [docs that will walk you through that in a snap](https://www.telerik.com/kendo-angular-ui/getting-started/#toc-project-setup)!
+# Getting Started: Setup
+  		  
+I'll assume that you have an app that's already built and ready to be modified. If you need help creating one, I'd recommend reading through our [Getting Started Guide](https://www.telerik.com/kendo-angular-ui/getting-started/#toc-project-setup). It outlines the steps necessary for setting up your machine to use Kendo UI for Angular. It also provides step-by-step instructions on how to build your first app.
 
 ￼![http://cl.nicoll.co/qYu9](https://d3vv6lp55qjaqc.cloudfront.net/items/3h472g2j083U2d2F2a3B/Image%202018-03-30%20at%2012.22.37%20PM.png?X-CloudApp-Visitor-Id=23627&v=4f186801)
 
