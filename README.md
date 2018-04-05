@@ -10,7 +10,9 @@ I went ahead and did some styling and created a header, so to follow along, you 
 
 I did start our project using the Service Worker and `scss` flag (more on this in a later gif guide):
 
-`ng new KUI-buttons --style=scss --service-worker`
+```console
+ng new KUI-buttons --style=scss --service-worker
+```
 
 > The --service-worker flag takes care of configuring your app to use service workers by adding the service-worker package along with setting up the necessary files to support service workers. For information on the details, see the following section which covers the process in detail as it shows you how to add a service worker manually to an existing app. — [Angular.io Guide](https://angular.io/guide/service-worker-getting-started)
 
@@ -38,7 +40,7 @@ export class AppComponent {
 If you check out the `app.component.sass`, you will see that I imported a variable stylesheet. This is a place for us to store global style variables, like the ones already there:
 
 **app.component.sass**
-```css
+```sass
 $kendo-orange: #ff6358
 $kendo-white: #f8f8f8
 $kendo-light-grey: #ededed
@@ -63,7 +65,7 @@ Now we are going to install the Kendo UI Theme:
 
 And then we will include the theme in our `styles.scss` file!
 
-```css
+```scss
 @import '~@progress/kendo-theme-default/scss/all'
 ```
 
@@ -71,9 +73,10 @@ And then we will include the theme in our `styles.scss` file!
 
 Now before we start using some Kendo components, let's go ahead and get our navigation working. We'll start by generating the two components we are missing; `T-shirts` and `Stickers`.
 
-`ng g c t-shirts`
-
-`ng g c stickers`
+```console
+ng g c t-shirts
+ng g c stickers
+```
 
 ![http://cl.nicoll.co/qYSz](http://cl.nicoll.co/qYSz/Screen%20Recording%202018-03-30%20at%2005.28%20PM.gif)
 
@@ -81,14 +84,17 @@ Now before we start using some Kendo components, let's go ahead and get our navi
 
 ## Import the angular router service into the `app.module.ts`
 
-`import { RouterModule, Routes } from '@angular/router';`
+```ts
+import { RouterModule, Routes } from '@angular/router';
+```
 
 ![http://cl.nicoll.co/qYSK](http://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
 
-
 ## Create appRoutes const
 
-`const appRoutes: Routes = [];`
+```ts
+const appRoutes: Routes = [];
+```
 
 ![http://cl.nicoll.co/qY1q](http://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
 
@@ -102,15 +108,12 @@ Now before we start using some Kendo components, let's go ahead and get our navi
 
 ![http://cl.nicoll.co/qZEd](http://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
 
-
-
 ## Route to that comp as default
 
 ```ts
 const appRoutes: Routes = [
   { path: 'stickers', component: StickersComponent },
-  { path: '', redirectTo: '/stickers',
-    pathMatch: 'full' }
+  { path: '', redirectTo: '/stickers', pathMatch: 'full' }
 ];
 ```
 
@@ -118,26 +121,30 @@ The empty path in the second route represents the default path for the applicati
 
 ![http://cl.nicoll.co/qYAg](http://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
 
-## Creating the other route for our t-shirts component
+## Create the other route for our t-shirts component
+
 ![http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
 
 Remember to leave the most generic routes, last. Order does matter! So in this case, we are leaving the empty route until the very end, for our "catch all" route.
 
-# Hooking up our navigation in `app.component.html`
+# Add Navigation in `app.component.html`
 
 At the top, we'll add a `routerLink` with the route for each of the anchors:
 
 ```html
-
-  <nav>
-    <a routerLink="/t-shirts">T-Shirts</a>
-    <a routerLink="/stickers">Stickers</a>
-  </nav>
+<nav>
+  <a routerLink="/t-shirts">T-Shirts</a>
+  <a routerLink="/stickers">Stickers</a>
+</nav>
 ```
-Include the router-outlet at the bottom of our `app.component.html`:
-`<router-outlet></router-outlet>`
 
-Our routes are working now!!
+Include the router-outlet at the bottom of our `app.component.html`:
+
+```html
+<router-outlet></router-outlet>
+```
+
+Our routes are working now!
 
 ![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qe4i/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
@@ -148,17 +155,21 @@ However, we don't have active styles applying to the links when each route in tu
 <a routerLink="/stickers" routerLinkActive="active">Stickers</a>
 ```
 
-
-Now look at the magic happen!
+Watch the magic happen:
 
 ![http://cl.nicoll.co/qdA2](http://cl.nicoll.co/qdA2/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
-# Installing KUI Buttons
-`npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n`
+# Install the Button Component and Dependencies
+
+Let's install the Button component so we can use it in our app. It's contained in the package, `@progress/kendo-angular-buttons`. It has a peer dependency for the Localization package, `@progress/kendo-angular-l10n`, which enables you to translate the components into different languages.
+
+```console
+npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n
+```
 
 ![http://cl.nicoll.co/qdiu](http://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
 
-# Import Button & Animation Component into `app.module.ts`
+# Import Button and Animation Component into `app.module.ts`
 
 Animations are a dependency of our Buttons component. So we'll need to include both!
 Once you import them:
