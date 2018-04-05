@@ -1,8 +1,8 @@
 This GIF guide demonstrates the steps necessary to integrate [Kendo UI for Angular](https://www.telerik.com/kendo-angular-ui/) into a web app. It then walks you through the process of using the [Button](https://www.telerik.com/kendo-angular-ui/components/buttons/button/) component.
 
 # Getting Started: Setup
-  		  
-I'll assume that you have an app that's already built and ready to be modified. If you need help creating one, I'd recommend reading through our [Getting Started Guide](https://www.telerik.com/kendo-angular-ui/getting-started/#toc-project-setup). It outlines the steps necessary for setting up your machine to use Kendo UI for Angular. It also provides step-by-step instructions on how to build your first app.
+
+We are starting this gif guide out with an already begun app. If you need a bit of help in creating your first app, we have a [Getting Started Guide](https://www.telerik.com/kendo-angular-ui/getting-started/#toc-project-setup)! It outlines the steps necessary for setting up your machine to use Kendo UI for Angular. It also provides step-by-step instructions on how to build your first app.
 
 ￼![http://cl.nicoll.co/qYu9](https://d3vv6lp55qjaqc.cloudfront.net/items/3h472g2j083U2d2F2a3B/Image%202018-03-30%20at%2012.22.37%20PM.png?X-CloudApp-Visitor-Id=23627&v=4f186801)
 
@@ -208,6 +208,44 @@ Now I went ahead and populated the stickers template:
 
 # Including the KUI Buttons in our stickers component
 
-# Adding the buttons functionality
+Now we are going to go ahead and add our buttons into the stickers componet. So each sticker for sale will have a button to add that sticker to the cart!
 
-We need each of these buttons to add the product to the cart and trigger a cart animation.
+```html
+<section>
+  <div class="product">
+    <div class="product image">
+      <img src="assets/images/stickers/angular_sticker.jpeg" />
+    </div>
+    <button kendoButton (click)="onButtonClick()" [primary]="true">Angular Sticker $5</button>
+  </div>
+
+  <div class="product">
+    <div class="product image">
+      <img src="assets/images/stickers/angularjs_sticker.jpeg" />
+    </div>
+    <button kendoButton (click)="onButtonClick()" [primary]="true">AngularJS Sticker $5</button>
+  </div>
+
+  <div class="product">
+    <div class="product image">
+      <img src="assets/images/stickers/nativescript_sticker.jpeg" />
+    </div>
+    <button kendoButton (click)="onButtonClick()" [primary]="true">NativeScript Sticker $5</button>
+  </div>
+
+  <div class="product">
+    <div class="product image">
+      <img src="assets/images/stickers/react_sticker.jpeg" />
+    </div>
+    <button kendoButton (click)="onButtonClick()" [primary]="true">React Sticker $5</button>
+  </div>
+
+  <div class="product">
+    <div class="product image">
+      <img src="assets/images/stickers/vuejs_sticker.jpeg" />
+    </div>
+    <button kendoButton (click)="onButtonClick()" [primary]="true">VueJS Sticker $5</button>
+  </div>
+
+</section>
+```
