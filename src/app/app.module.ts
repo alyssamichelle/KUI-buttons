@@ -11,6 +11,7 @@ import { StickersComponent } from './stickers/stickers.component';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   {path: 'stickers', component: StickersComponent},
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     TShirtsComponent,
-    StickersComponent
+    StickersComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

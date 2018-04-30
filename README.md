@@ -249,3 +249,12 @@ Now we are going to go ahead and add our buttons into the stickers componet. So 
 
 </section>
 ```
+
+# Adding the buttons functionality
+
+We need each of these buttons to add the product to the cart and trigger a cart animation.
+
+- generate a cart componet
+- add a cart object
+- onButtonClick add sticker to cart object
+- animate cart icon and ++ the cart total
