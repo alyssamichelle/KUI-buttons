@@ -1,6 +1,6 @@
-This GIF guide demonstrates the steps necessary to integrate [Kendo UI for Angular](https://www.telerik.com/kendo-angular-ui/) into a web app. It then walks you through the process of using the [Button](https://www.telerik.com/kendo-angular-ui/components/buttons/button/) component.
+This GIF guide demonstrates the steps necessary to integrate [Kendo UI for Angular](https://www.telerik.com/kendo-angular-ui/) into a web app. This is going to be a demo store app that we are building and each new gif guide will walk you through a different Kendo UI Component. This particular guide walks you through the process of using the [Button](https://www.telerik.com/kendo-angular-ui/components/buttons/button/) component as well as setting up a store app and adding products to a "cart". Let's dive in!
 
-# Getting Started: Setup
+## Getting Started: Setup
 
 We are starting this gif guide out with an already begun app. If you need a bit of help in creating your first app, we have a [Getting Started Guide](https://www.telerik.com/kendo-angular-ui/getting-started/#toc-project-setup)! It outlines the steps necessary for setting up your machine to use Kendo UI for Angular. It also provides step-by-step instructions on how to build your first app.
 
@@ -18,9 +18,9 @@ ng new KUI-buttons --style=scss --service-worker
 
 > The --service-worker flag takes care of configuring your app to use service workers by adding the service-worker package along with setting up the necessary files to support service workers. For information on the details, see the following section which covers the process in detail as it shows you how to add a service worker manually to an existing app. — [Angular.io Guide](https://angular.io/guide/service-worker-getting-started)
 
-# Setting View Encapsulation to none for our root component
+## Setting View Encapsulation to none for our root component
 
-I also went ahead and set view encapsulation to none on our root component. This is going to allow us to import a styles variable file and all the children components of the root app.component will inherit these styles. Yay cascading styles!
+I also went ahead and set view encapsulation to none on our root component. This is going to allow us to import a styles variable file and all the children components of the root `app.component` will inherit these styles. Yay cascading styles!
 
 **app.component.ts**
 ```ts
@@ -37,9 +37,9 @@ export class AppComponent {
 }
 ```
 
- # Creating the Variable style sheet
+ ## Creating the Variable stylesheet
 
-If you check out the `app.component.sass`, you will see that I imported a variable stylesheet. This is a place for us to store global style variables, like the ones already there:
+If you check out the `app.component.sass`, you will see that I created and imported a variable stylesheet. This is a place for us to store global style variables, like the ones already there:
 
 **app.component.sass**
 ```sass
@@ -53,13 +53,7 @@ Now that you have cloned down the starter seed to this gif guide, cd to that pro
 ￼
 ![http://cl.nicoll.co/qY5W](https://d3vv6lp55qjaqc.cloudfront.net/items/1d0a1B11421k2u1h3H1E/Image%202018-03-30%20at%203.57.23%20PM.png?X-CloudApp-Visitor-Id=23627&v=b6a2a69c)
 
----
-
-remove below and link to gif guide once published
-
----
-
-# Installing the KUI Theme
+## Installing the KUI Theme
 
 Now we are going to install the Kendo UI Theme:
 
@@ -71,7 +65,7 @@ And then we will include the theme in our `styles.scss` file!
 @import '~@progress/kendo-theme-default/scss/all'
 ```
 
-# Generating the t-shirts and stickers components
+## Generating the t-shirts and stickers components
 
 Now before we start using some Kendo components, let's go ahead and get our navigation working. We'll start by generating the two components we are missing; `T-shirts` and `Stickers`.
 
@@ -82,9 +76,9 @@ ng g c stickers
 
 ![http://cl.nicoll.co/qYSz](http://cl.nicoll.co/qYSz/Screen%20Recording%202018-03-30%20at%2005.28%20PM.gif)
 
-# Creating Routes for our navigation
+## Creating Routes for our navigation
 
-## Import the angular router service into the `app.module.ts`
+### Import the angular router service into the `app.module.ts`
 
 ```ts
 import { RouterModule, Routes } from '@angular/router';
@@ -92,7 +86,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 ![http://cl.nicoll.co/qYSK](http://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
 
-## Create appRoutes const
+### Create appRoutes const
 
 ```ts
 const appRoutes: Routes = [];
@@ -100,7 +94,9 @@ const appRoutes: Routes = [];
 
 ![http://cl.nicoll.co/qY1q](http://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
 
-## Configure our routes (with routerModule.forRoot) and add to app's import array
+### Configure our routes
+
+Next, we need to configure our `appRoutes` with `routerModule.forRoot()`. This goes inside our `app.module.ts` imports array:
 
 ```ts
   RouterModule.forRoot(
@@ -110,7 +106,9 @@ const appRoutes: Routes = [];
 
 ![http://cl.nicoll.co/qZEd](http://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
 
-## Route to that comp as default
+### Route to that comp as default
+
+Now to create a couple of routes! Our `stickers` path needs to point to our `StickersComponent`.
 
 ```ts
 const appRoutes: Routes = [
@@ -123,15 +121,15 @@ The empty path in the second route represents the default path for the applicati
 
 ![http://cl.nicoll.co/qYAg](http://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
 
-## Create the other route for our t-shirts component
-
-![http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
+### Create the other route for our t-shirts component
 
 Remember to leave the most generic routes, last. Order does matter! So in this case, we are leaving the empty route until the very end, for our "catch all" route.
 
-# Add Navigation in `app.component.html`
+![http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
 
-At the top, we'll add a `routerLink` with the route for each of the anchors:
+## Add Navigation in `app.component.html`
+
+At the top, we'll add a `routerLink` attribute with the route for each of the anchors:
 
 ```html
 <nav>
@@ -150,7 +148,25 @@ Our routes are working now!
 
 ![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qe4i/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
-However, we don't have active styles applying to the links when each route in turn is selected. I've already added `.active` styles to the `app.component.sass` file. We just need to set a `routerLinkActive` attribute to active. This is going to add a class of `.active` to each anchor when the `routerLink` route is selected.
+## Getting the active links to LOOK active
+
+However, we don't have active styles applying to the links when each route in turn is selected. I've already added `.active` styles to the `app.component.sass` file:
+
+```sass
+  a, a:focus, a:active
+    color: $kendo-black
+    text-decoration: none
+    margin: 14px
+    &:first-child
+      margin-left: 0
+
+  a.active
+    font-weight: bold
+    cursor: default
+    color: $kendo-orange
+```
+
+We just need to set a `routerLinkActive` attribute to the active anchor. This is going to add a class of `.active` to each anchor when the `routerLink` route is selected.
 
 ```html
 <a routerLink="/t-shirts" routerLinkActive="active">T-Shirts</a>
@@ -159,9 +175,9 @@ However, we don't have active styles applying to the links when each route in tu
 
 Watch the magic happen:
 
-![http://cl.nicoll.co/qdA2](http://cl.nicoll.co/qdA2/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
+![http://cl.nicoll.co/rLhd](http://cl.nicoll.co/rLhd/Screen%20Recording%202018-05-03%20at%2012.36%20PM.gif)
 
-# Install the Button Component and Dependencies
+## Install the Button Component and Dependencies
 
 Let's install the Button component so we can use it in our app. It's contained in the package, `@progress/kendo-angular-buttons`. It has a peer dependency for the Localization package, `@progress/kendo-angular-l10n`, which enables you to translate the components into different languages.
 
@@ -171,9 +187,10 @@ npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n
 
 ![http://cl.nicoll.co/qdiu](http://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
 
-# Import Button and Animation Component into `app.module.ts`
+## Import Button and Animation Component into `app.module.ts`
 
 Animations are a dependency of our Buttons component. So we'll need to include both!
+
 Once you import them:
 
 ```ts
@@ -202,11 +219,11 @@ Be sure to add them to the imports array as well:
 
 ![http://cl.nicoll.co/qe6n](http://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
 
-Now I went ahead and populated the stickers template:
+I went ahead and populated the stickers template for us:
 ![http://cl.nicoll.co/qdsG](http://cl.nicoll.co/qdsG/Image%202018-04-03%20at%204.43.52%20PM.png)
 
 
-# Including the KUI Buttons in our stickers component
+## Including the KUI Buttons in our stickers component
 
 Now we are going to go ahead and add our buttons into the stickers componet. So each sticker for sale will have a button to add that sticker to the cart!
 
@@ -250,11 +267,257 @@ Now we are going to go ahead and add our buttons into the stickers componet. So 
 </section>
 ```
 
-# Adding the buttons functionality
+## Adding the buttons functionality
 
-We need each of these buttons to add the product to the cart and trigger a cart animation.
+We need each of these buttons to add their product to the cart. The rest of our game plan will look something like this:
+- Generate Cart service
+- Import & Include Cart Service inside `app.module.ts` provider array
+- Create Product Class
+- Create CartItem Class
 
-- generate a cart componet
-- add a cart object
-- onButtonClick add sticker to cart object
-- animate cart icon and ++ the cart total
+### Generate Cart Service
+We are going to need a cart service to give us access to our cart to add/remove items.To generate our cart service, I used the CLI command:
+
+```console
+ng g s cart
+```
+
+### Import & Include Cart Service inside `app.module.ts` provider array
+```ts
+import { CartService } from './cart.service';
+
+...
+
+providers: [
+  CartService
+],
+```
+
+## Creating Classes for `product` and `cartItem`
+In order to add thing to our cart, we need to create a couple of classes, `cartItem`s that will consist of `product`s.
+
+### Create Product Class:
+We would like our products to consist of an id, type, name and price (in cents).
+
+**./product.ts**
+```ts
+export class Product {
+  id: number;
+  type: string;
+  name: string;
+  price: number;
+}
+```
+
+### Create Cart Item Class:
+
+We want all of our cart items to have not only the product info (from above) but also the quantity and the size if applicable.
+
+**./cartItem.ts**
+```ts
+import { Product } from './product';
+
+export class CartItem {
+  product: Product;
+  quantity: number;
+  size?: string | null;
+}
+```
+
+
+## Populating our Cart Service
+
+Now, inside our cart service, we will import the cartItem and product classes.
+
+**cart.service.ts**
+
+```ts
+import { Injectable } from '@angular/core';
+import { CartItem } from './cartItem';
+import { Product } from './product';
+
+
+@Injectable()
+```
+
+Then we'll create a hard coded productList for now, with all the stickers.
+
+```ts
+export class CartService {
+
+  // hard coded data, FOR NOW! MUHAHA
+  productList: Product[] = [
+    {
+      id: 0,
+      type: 'sticker',
+      name: 'Angular Sticker',
+      price: 500
+    },
+    {
+      id: 1,
+      type: 'sticker',
+      name: 'AngularJS Sticker',
+      price: 500
+    },
+    {
+      id: 2,
+      type: 'sticker',
+      name: 'NativeScript Sticker',
+      price: 500
+    },
+    {
+      id: 3,
+      type: 'sticker',
+      name: 'React Sticker',
+      price: 500
+    },
+    {
+      id: 4,
+      type: 'sticker',
+      name: 'VueJS Sticker',
+      price: 500
+    }
+  ];
+```
+
+Next we need to create a cart that is an array of cartItems.
+
+```ts
+  cart: CartItem[] = [];
+  constructor() {}
+```
+
+Now for the fun part! We need three functions, one to return the products in the cart (`getCart()`), one to return all the available products (`getProducts()`) and one to add items into our cart for shopping fun (`addToCart`)! Here we could import and use `Observable` and `of` from RXJS, but for now I chose to keep it simple:
+
+```ts
+  // Could use Observables if we wanted
+  // getCart(): Observable<CartItem[]> {
+  //   return of(this.cart);
+  // }
+  //
+  // getProducts(): Observable<Product[]> {
+  //   return of(this.productList);
+  // }
+
+  getCart(): CartItem[] {
+    return this.cart;
+  }
+
+  getProducts(): Product[] {
+    return this.productList;
+  }
+
+}
+```
+
+Our `addToCart()` method needs to be a bit more complex, so let's break it down.
+
+We could do something like this:
+```ts
+  addToCart(productId): void {
+    let item = this.productList.find( (product)=>{
+      return product.id == productId;
+    });
+
+    let cartItem: CartItem = {
+      product: item,
+      quantity: 1
+    };
+
+    this.cart.push(cartItem);
+    console.log('CART:', this.cart);
+  }
+```
+In this implementation, we take the `productId` passed in and set `item` to the product with a matching id. Then we take that item and put it into a `cartItem` with a default quantity of 1. Then simply push the `cartItem` into the cart. This works of course, but isn't super flexible. If the shopper chooses to buy two of the same sticker, this way would push that same sticker into the cart twice instead of simply updating the quantity of the first sticker. What we'd rather have happen is first check if that product exists in the cart, if it does update the quantity, else push the new product into the cart.
+
+```ts
+  addToCart(productId): void {
+    let item = this.productList.find( (product)=>{
+      return product.id == productId;
+    });
+
+    let cartItem: CartItem = {
+      product: item,
+      quantity: 1
+    };
+
+    for (let thingInCart of this.cart) {
+      if (thingInCart.product.id == item.id) {
+        thingInCart.quantity++;
+        console.log('CART:', this.cart);
+        return;
+      }
+    };
+
+    this.cart.push(cartItem);
+    console.log('CART:', this.cart);
+  }
+```
+Now that all this cool cart functionality has been created, we can go into our stickers component and use it! For a quick test, let's connect each of the buttons (again, hard coded, I know) and call an `addToCart()` method that we need to create in the stickers component. We'll pass in a product id for each product.
+
+`<button kendoButton (click)="addToCart(0)" [primary]="true">Angular Sticker $5</button>`
+
+So each of our buttons will have this nifty call on click `(click)="addToCart(0)"`.
+
+![image of stickers.component.html](http://cl.nicoll.co/rHwh/Image%202018-05-01%20at%201.57.00%20PM.png)
+
+## Finishing the addToCart functionality in the stickers component
+
+
+Now let's create the `addToCart` functionality inside our `stickers.component.ts` by importing the `CartService`.
+
+**stickers.component.ts**
+```ts
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
+
+@Component({
+  selector: 'app-stickers',
+  templateUrl: './stickers.component.html',
+  styleUrls: ['./stickers.component.sass']
+})
+```
+
+Then we'll go ahead and inject our `cartService` in the constructor params. We need to do it here, because there are methods on the CartService which we'd like to use.
+
+```ts
+export class StickersComponent implements OnInit {
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {}
+
+}
+```
+
+### Now we simply need to create an `addToCart` function
+
+This function will pass the productId to the Service and let it handle all the logic.
+
+```ts
+export class StickersComponent implements OnInit {
+
+  constructor(private cartService: CartService) {}
+
+  addToCart(productId): void {
+    this.cartService.addToCart(productId);
+  }
+
+  ngOnInit() {}
+
+}
+```
+
+## The Cart is now being populted!!!!
+
+Now when we click the stickers buttons, each sticker is added to the cart!
+
+![http://cl.nicoll.co/rKnV](http://cl.nicoll.co/rKnV/Screen%20Recording%202018-05-03%20at%2001.52%20PM.gif)
+
+And if we selected the same sticker multiple times, we see that it just updates the quantity for that product in the cart!
+
+![http://cl.nicoll.co/rKHD](http://cl.nicoll.co/rKHD/Screen%20Recording%202018-05-03%20at%2001.53%20PM.gif)
+
+![http://cl.nicoll.co/rKEm](http://cl.nicoll.co/rKEm/Image%202018-05-03%20at%201.54.45%20PM.png)
+
+We have much more to do in the way of cleaning up, but for now we will leave that for the next gif guide! We hope you have enjoyed this first one and look forward to publishing more that will build on where we left off. Happy coding!

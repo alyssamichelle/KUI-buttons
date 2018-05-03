@@ -12,6 +12,7 @@ import { StickersComponent } from './stickers/stickers.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
 
 const appRoutes: Routes = [
   {path: 'stickers', component: StickersComponent},
@@ -36,7 +37,9 @@ const appRoutes: Routes = [
     ),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
