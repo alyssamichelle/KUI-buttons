@@ -8,7 +8,6 @@ import { CartService } from '../cart.service';
 })
 export class StickersComponent implements OnInit {
 
-  products: Product[];
   constructor(private cartService: CartService) {}
 
   addToCart(productId): void {
