@@ -1,3 +1,4 @@
+import { CartService } from './cart.service';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -8,4 +9,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kendo UI Store';
+  public cart;
+  constructor() {
+    let cartService = new CartService;
+    this.cart = cartService.getCart();
+    console.log('app comp cart: ', this.cart);
+  }
 }
