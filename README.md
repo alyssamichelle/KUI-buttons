@@ -51,13 +51,13 @@ $kendo-black: #4b4e52
 
 Now that you have cloned down the starter seed to this gif guide, cd to that project in your terminal and `npm install` all the things. Then, let's run the project using `ng serve`. You should see this at `http://localhost:4200/` in your browser:
 ￼
-![http://cl.nicoll.co/qY5W](https://d3vv6lp55qjaqc.cloudfront.net/items/1d0a1B11421k2u1h3H1E/Image%202018-03-30%20at%203.57.23%20PM.png?X-CloudApp-Visitor-Id=23627&v=b6a2a69c)
+![https://cl.nicoll.co/qY5W](https://d3vv6lp55qjaqc.cloudfront.net/items/1d0a1B11421k2u1h3H1E/Image%202018-03-30%20at%203.57.23%20PM.png?X-CloudApp-Visitor-Id=23627&v=b6a2a69c)
 
 ## Installing the KUI Theme
 
 Now we are going to install the Kendo UI Theme:
 
-![http://cl.nicoll.co/qXvd](http://cl.nicoll.co/qXvd/Screen%20Recording%202018-03-30%20at%2004.46%20PM.gif)
+![https://cl.nicoll.co/qXvd](https://cl.nicoll.co/qXvd/Screen%20Recording%202018-03-30%20at%2004.46%20PM.gif)
 
 And then we will include the theme in our `styles.scss` file!
 
@@ -74,7 +74,7 @@ ng g c t-shirts
 ng g c stickers
 ```
 
-![http://cl.nicoll.co/qYSz](http://cl.nicoll.co/qYSz/Screen%20Recording%202018-03-30%20at%2005.28%20PM.gif)
+![https://cl.nicoll.co/qYSz](https://cl.nicoll.co/qYSz/Screen%20Recording%202018-03-30%20at%2005.28%20PM.gif)
 
 ## Creating Routes for our navigation
 
@@ -84,7 +84,7 @@ ng g c stickers
 import { RouterModule, Routes } from '@angular/router';
 ```
 
-![http://cl.nicoll.co/qYSK](http://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
+![https://cl.nicoll.co/qYSK](https://cl.nicoll.co/qYSK/Screen%20Recording%202018-03-30%20at%2006.08%20PM.gif)
 
 ### Create appRoutes const
 
@@ -92,7 +92,7 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [];
 ```
 
-![http://cl.nicoll.co/qY1q](http://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
+![https://cl.nicoll.co/qY1q](https://cl.nicoll.co/qY1q/Screen%20Recording%202018-03-30%20at%2006.10%20PM.gif)
 
 ### Configure our routes
 
@@ -104,7 +104,7 @@ Next, we need to configure our `appRoutes` with `routerModule.forRoot()`. This g
   )
 ```
 
-![http://cl.nicoll.co/qZEd](http://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
+![https://cl.nicoll.co/qZEd](https://cl.nicoll.co/qZEd/Screen%20Recording%202018-03-30%20at%2009.19%20PM.gif)
 
 ### Route to that comp as default
 
@@ -119,13 +119,13 @@ const appRoutes: Routes = [
 
 The empty path in the second route represents the default path for the application, the place to go when the path in the URL is empty, as it typically is at the start.
 
-![http://cl.nicoll.co/qYAg](http://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
+![https://cl.nicoll.co/qYAg](https://cl.nicoll.co/qYAg/Screen%20Recording%202018-03-30%20at%2009.09%20PM.gif)
 
 ### Create the other route for our t-shirts component
 
 Remember to leave the most generic routes, last. Order does matter! So in this case, we are leaving the empty route until the very end, for our "catch all" route.
 
-![http://cl.nicoll.co/qe2z](http://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
+![https://cl.nicoll.co/qe2z](https://cl.nicoll.co/qe2z/Screen%20Recording%202018-04-03%20at%2003.07%20PM.gif)
 
 ## Add Navigation in `app.component.html`
 
@@ -146,7 +146,7 @@ Include the router-outlet at the bottom of our `app.component.html`:
 
 Our routes are working now!
 
-![http://cl.nicoll.co/qe4i](http://cl.nicoll.co/qe4i/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
+![https://cl.nicoll.co/qe4i](https://cl.nicoll.co/qe4i/Screen%20Recording%202018-04-03%20at%2004.27%20PM.gif)
 
 ## Getting the active links to LOOK active
 
@@ -175,7 +175,7 @@ We just need to set a `routerLinkActive` attribute to the active anchor. This is
 
 Watch the magic happen:
 
-![http://cl.nicoll.co/rLhd](http://cl.nicoll.co/rLhd/Screen%20Recording%202018-05-03%20at%2012.36%20PM.gif)
+![https://cl.nicoll.co/rLhd](https://cl.nicoll.co/rLhd/Screen%20Recording%202018-05-03%20at%2012.36%20PM.gif)
 
 ## Install the Button Component and Dependencies
 
@@ -185,7 +185,7 @@ Let's install the Button component so we can use it in our app. It's contained i
 npm install --save @progress/kendo-angular-buttons @progress/kendo-angular-l10n
 ```
 
-![http://cl.nicoll.co/qdiu](http://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
+![https://cl.nicoll.co/qdiu](https://cl.nicoll.co/qdiu/Screen%20Recording%202018-04-03%20at%2002.49%20PM.gif)
 
 ## Import Button and Animation Component into `app.module.ts`
 
@@ -198,7 +198,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 ```
 
-![http://cl.nicoll.co/qdHi](http://cl.nicoll.co/qdHi/Screen%20Recording%202018-04-03%20at%2002.59%20PM.gif)
+![https://cl.nicoll.co/qdHi](https://cl.nicoll.co/qdHi/Screen%20Recording%202018-04-03%20at%2002.59%20PM.gif)
 
 Be sure to add them to the imports array as well:
 
@@ -217,10 +217,10 @@ Be sure to add them to the imports array as well:
   ],
 ```
 
-![http://cl.nicoll.co/qe6n](http://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
+![https://cl.nicoll.co/qe6n](https://cl.nicoll.co/qe6n/Screen%20Recording%202018-04-03%20at%2003.01%20PM.gif)
 
 I went ahead and populated the stickers template for us:
-![http://cl.nicoll.co/qdsG](http://cl.nicoll.co/qdsG/Image%202018-04-03%20at%204.43.52%20PM.png)
+![https://cl.nicoll.co/qdsG](https://cl.nicoll.co/qdsG/Image%202018-04-03%20at%204.43.52%20PM.png)
 
 
 ## Including the KUI Buttons in our stickers component
@@ -459,7 +459,7 @@ Now that all this cool cart functionality has been created, we can go into our s
 
 So each of our buttons will have this nifty call on click `(click)="addToCart(0)"`.
 
-![image of stickers.component.html](http://cl.nicoll.co/rHwh/Image%202018-05-01%20at%201.57.00%20PM.png)
+![image of stickers.component.html](https://cl.nicoll.co/rHwh/Image%202018-05-01%20at%201.57.00%20PM.png)
 
 ## Finishing the addToCart functionality in the stickers component
 
@@ -512,12 +512,12 @@ export class StickersComponent implements OnInit {
 
 Now when we click the stickers buttons, each sticker is added to the cart!
 
-![http://cl.nicoll.co/rKnV](http://cl.nicoll.co/rKnV/Screen%20Recording%202018-05-03%20at%2001.52%20PM.gif)
+![https://cl.nicoll.co/rKnV](https://cl.nicoll.co/rKnV/Screen%20Recording%202018-05-03%20at%2001.52%20PM.gif)
 
 And if we selected the same sticker multiple times, we see that it just updates the quantity for that product in the cart!
 
-![http://cl.nicoll.co/rKHD](http://cl.nicoll.co/rKHD/Screen%20Recording%202018-05-03%20at%2001.53%20PM.gif)
+![https://cl.nicoll.co/rKHD](https://cl.nicoll.co/rKHD/Screen%20Recording%202018-05-03%20at%2001.53%20PM.gif)
 
-![http://cl.nicoll.co/rKEm](http://cl.nicoll.co/rKEm/Image%202018-05-03%20at%201.54.45%20PM.png)
+![https://cl.nicoll.co/rKEm](https://cl.nicoll.co/rKEm/Image%202018-05-03%20at%201.54.45%20PM.png)
 
 We have much more to do in the way of cleaning up, but for now we will leave that for the next gif guide! We hope you have enjoyed this first one and look forward to publishing more that will build on where we left off. Happy coding!
